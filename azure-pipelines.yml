@@ -24,3 +24,8 @@ stages:
         javaHomeOption: 'JDKVersion'
         sonarQubeRunAnalysis: false
         spotBugsAnalysis: false
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(System.DefaultWorkingDirectory)/build/libs/gradle-example-0.0.1-SNAPSHOT.jar'
+        artifact: 'sample_jar'
+        publishLocation: 'pipeline'
